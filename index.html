@@ -1,7 +1,12 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Uniform Resource Locator</title>
+  <title>Uniform Resource Locator Info</title>
+  <!-- Copyright (c) 2015 Jan van der Meiden.                               -->
+  <!-- Copying and distribution of this file, with or without modification, -->
+  <!-- are permitted in any medium without royalty provided the copyright   -->
+  <!-- notice and this notice are preserved.  This file is offered as-is,   -->
+  <!-- without any warranty.                                                -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -11,9 +16,62 @@
 <body>
 
 <div class="container">
-  <h1>What is a Uniform Resource Locator?</h1>
-  <p>Resources on the web are identified by a 'Uniform Resource Locator' or URL. The specification for a URL is laid down in 
-     <a href="http://www.rfc-base.org/txt/rfc-1738.txt ">rfc-1738</a>. </p>
+  <h3>Uniform Resource Locator Info</h3>
+  <h4>Background</h4>
+  <p>The line displayed by web browsers above the page in an address bar is a 
+     'Uniform Resource Locator' or URL. The specification for a URL is laid down in
+     <a href="http://www.rfc-base.org/txt/rfc-1738.txt ">rfc-1738</a>. </br>
+     Most common URLs are made up of these components: </br>
+      <pre>  scheme           host         port             path          query                         
+
+ >>-http://--+-host name--+--+--------+--/--path component--?-query--#fragment--
+             '-IP address-'  '-:-port-'                      </pre>
+</p>
+     <ul><li>Scheme: identifies the protocol to be used to access the resource on the Internet. 
+             For instance 'http', 'https', 'ftp' etc.</li>
+          <li>Host (or IP address): identifies the host that holds the resource. For example, www.example.com. 
+              For one hostname there may be many servers, or vice versa one server may provide services for many hostnames.</li>
+          <li>Port number: is optional, will default to common values like 80 for http.</li>
+          <li>Path: identifies the specific resource in the host that the web client wants to access. For example, /software/index.html.</li>
+          <li>Query string and fragments: if used, it follows the path component, and provides a string of information that the resource can use for some purpose.<br/>
+              For example tell 'Bing' to look for images of 'panda': <a href="http://www.bing.com/images/search?q=panda">http://www.bing.com/images/search?q=panda</a>
+          </li></ul>
+  <h4>This Site</h4>
+  Occasionally you may want to have addional information on a Uniform Resource Locator. That may be
+  out of plain curiosity or because a URL seems to be pointing at a suspicious location like 'our fraud 
+  team blocked your credit card: click &gthere&lt to .. '
+</p>
+<p>
+<h4>Hostnames</h4>
+First the hostname: it resolves to one or more IP addresses (unless the name is not found..). Per IP address we can lookup its location and (in many cases) do a reverse lookup.
+<pre>
+                                             .- location
+                           .--- IP address --+
+                           .                 .- reverse name 
+                           .
+                           .                 .- location
+hostname &gt- resolves to &gt--+--- IP address --+
+                           .                 .- reverse name
+                           .
+                           .                 .- location 
+                           .--- IP address --+
+                                             .- reverse name
+</pre>
+More information on Domain names can be foud for instance at <a href="http://www.iana.org/domains">IANA</a>.
+<h4>Redirections</h4>
+Quite often when a browser connects to a URL, the server wil redirect to a new url, quite comm
+<pre>
+           .--- Redirects --+
+           .                 .
+           v                 ^
+           .                 .
+URL -- &gt---+-----------------+---- &gt-
+</pre>
+</p>
+<h4>Server information</h4>
+When succesfully connected to a server, this server may (or may not) send technical information back in its http header fields.
+<h4>Certificates</h4>
+The information contained in certificates can be interesting.
 </div>
 
 </body>
